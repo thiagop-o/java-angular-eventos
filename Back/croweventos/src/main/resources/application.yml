@@ -1,0 +1,5 @@
+spring:
+    datasource:
+        url: jdbc:mysql://database-2.c9srkvngeiq3.sa-east-1.rds.amazonaws.com/eventos
+        username: admin
+        password: 29121109
