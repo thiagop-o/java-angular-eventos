@@ -1,0 +1,50 @@
+spring:
+    datasource:
+        url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/db_eventos
+        username: root
+        password: mysql
+        driver-class-name: com.mysql.cj.jdbc.Driver
+    jpa:
+        hibernate:
+            ddl-auto: update
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL8Dialect
+
+CREATE TABLE `event` (
+  `id` binary(255) NOT NULL,
+  `created_date` date DEFAULT NULL,
+  `email` varchar(255) NOT NULL,
+  `event_date` date DEFAULT NULL,
+  `event_name` varchar(255) NOT NULL,
+  `imageurl` varchar(255) NOT NULL,
+  `local` varchar(255) NOT NULL,
+  `people_qty` int NOT NULL,
+  `telephone` varchar(255) NOT NULL,
+  `updated_date` date DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `lot` (
+  `id` binary(255) NOT NULL,
+  `quantity` int NOT NULL,
+  `created_date` date DEFAULT NULL,
+  `end_date` date DEFAULT NULL,
+  `lot_name` varchar(255) NOT NULL,
+  `price` decimal(19,2) DEFAULT NULL,
+  `start_date` date NOT NULL,
+  `updated_date` date DEFAULT NULL,
+  `event_id` binary(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `FK235t137x2xrm8m6u5dy8ggdjr` (`event_id`),
+  CONSTRAINT `FK235t137x2xrm8m6u5dy8ggdjr` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `event_lots` (
+  `event_id` binary(255) NOT NULL,
+  `lots_id` binary(255) NOT NULL,
+  UNIQUE KEY `UK_5axvwrjatn7s7bc7ylbnev2g9` (`lots_id`),
+  KEY `FKdkfvxtshgeyco3yu4rrr3hyim` (`event_id`),
+  CONSTRAINT `FK5x78wndq4fj07hedd63c8j7ir` FOREIGN KEY (`lots_id`) REFERENCES `lot` (`id`),
+  CONSTRAINT `FKdkfvxtshgeyco3yu4rrr3hyim` FOREIGN KEY (`event_id`) REFERENCES `event` (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

@@ -4,18 +4,18 @@ Projeto sendo criado junto com a comunidade da Digital Innovation One no meu [Yo
 
 <p>Temos alguns requisitos iniciais para a criação deste projeto:</p>
 
-> Java JDK 11+
-> Maven 
-> Node.js (Ultima versão)
-> Conhecimentos Básicos em Java
+> Java JDK 11+ <br>
+> Maven <br>
+> Node.js (Ultima versão) <br>
+> Conhecimentos Básicos em Java <br>
 
 
 
 
 <h4>Links Úteis:</h4>
 
-[Amazon AWS](https://aws.amazon.com/pt/)
-[Sprint Initializr](https://start.spring.io)
-[Angular](https://angular.io/guide/setup-local)
-[Visual Studio Code](https://code.visualstudio.com)
+[Amazon AWS](https://aws.amazon.com/pt/)<br>
+[Sprint Initializr](https://start.spring.io)<br>
+[Angular](https://angular.io/guide/setup-local)<br>
+[Visual Studio Code](https://code.visualstudio.com)<br>
 [SQL Ectron](https://sqlectron.github.io)
